@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block extracss %}
+<style>
+h3 {color:#000; font-weight:bold;}
+h3 span {font-size:60%; float:right;}
+</style>
+{% endblock extracss %}
+    
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            My Best Blog
+        </div>
+        <div class="card-body">
+            {% for post in posts %}
+            <h3>{{ post.name }} <span>{{ post.published|timesince }}</span></h3>
+            <a href="{% url 'blog:post_detail' post.pk %}">Read more</a>
+            <br>
+            {% empty %}
+            <p>Hey! I will write my best blog soon</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>    
+{% endblock content %}
+    
