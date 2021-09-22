@@ -1,5 +1,5 @@
 asgiref==3.3.4
-Django==3.2.4
+Django==3.2.5
 pytz==2019.1
 sqlparse==0.3.0
 typing-extensions==3.10.0.0
